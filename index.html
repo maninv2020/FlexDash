@@ -1,18 +1,237 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vite App</title>
-        <link rel="stylesheet" href="/src/styles/main.css">
-    </head>
-    <body>
-        <div class="flex h-screen overflow-hidden">
-			<aside>
-				
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vite App</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css"
+		/>
+		<link rel="stylesheet" href="/src/styles/main.css" />
+	</head>
+	<body>
+		<div class="flex h-screen overflow-hidden bg-gray-50">
+			<!-- Sidebar  -->
+			<aside class="w-[theme(aside-width)] px-6">
+				<div class="h-18 flex items-center">
+					<img src="src/assets/logo.png" />
+				</div>
+				<ul class="text-gray-500 font-medium text-sm">
+					<li>
+						<a
+							href="#"
+							class="accordion-btn flex items-center py-2 rounded-lg text-black hover:text-primary"
+						>
+							<i
+								class="ti ti-layout-dashboard text-xl text-gray-500 pr-4"
+							></i>
+							Dashboards
+						</a>
+						<ul
+							class="accordion-content text-xs py-2 pl-7 relative before:content-[''] before:w-[1px] before:absolute before:bg-gray-200 before:top-0 before:left-3 before:h-[calc(100%-40px)] hidden"
+						>
+							<li
+								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
+							>
+								<a
+									class="px-2 py-2 flex items-center shadow-sm bg-white text-black rounded-lg hover:text-primary"
+									href="#"
+								>
+									Sales
+								</a>
+							</li>
+							<li
+								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
+							>
+								<a
+									class="px-2 py-2 flex items-center hover:text-primary"
+									href="#"
+									>CRM</a
+								>
+							</li>
+							<li
+								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
+							>
+								<a
+									class="px-2 py-2 flex items-center hover:text-primary"
+									href="#"
+									>Cryptocurrency</a
+								>
+							</li>
+							<li
+								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
+							>
+								<a
+									class="px-2 py-2 flex items-center hover:text-primary"
+									href="#"
+									>Personal</a
+								>
+							</li>
+							<li
+								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
+							>
+								<a
+									class="px-2 py-2 flex items-center hover:text-primary"
+									href="#"
+									>CRM</a
+								>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="accordion-btn flex items-center py-2 rounded-lg text-black hover:text-primary"
+						>
+							<i
+								class="ti ti-keyframes text-xl text-gray-500 pr-4"
+							></i>
+							Pages
+						</a>
+						<ul
+							class="accordion-content text-xs py-2 pl-7 relative before:content-[''] before:w-[1px] before:absolute before:bg-gray-200 before:top-0 before:left-3 before:h-[calc(100%-40px)] hidden"
+						>
+							<li
+								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
+							>
+								<a class="px-3 py-2 flex items-center" href="#"
+									>Login</a
+								>
+							</li>
+							<li
+								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
+							>
+								<a class="px-3 py-2 flex items-center" href="#"
+									>Register</a
+								>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="accordion-btn block py-2 rounded-lg text-black hover:text-primary"
+						>
+							<i
+								class="ti ti-app-window text-xl text-gray-500 pr-4"
+							></i>
+							Apps
+						</a>
+						<ul
+							class="accordion-content text-xs py-2 pl-7 relative before:content-[''] before:w-[1px] before:absolute before:bg-gray-200 before:top-0 before:left-3 before:h-[calc(100%-40px)] hidden"
+						>
+							<li
+								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
+							>
+								<a class="px-3 py-2 flex items-center" href="#"
+									>Email</a
+								>
+							</li>
+							<li
+								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
+							>
+								<a class="px-3 py-2 flex items-center" href="#"
+									>Chat</a
+								>
+							</li>
+							<li
+								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
+							>
+								<a class="px-3 py-2 flex items-center" href="#"
+									>Kanban</a
+								>
+							</li>
+							<li
+								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
+							>
+								<a class="px-3 py-2 flex items-center" href="#"
+									>Calender</a
+								>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="accordion-btn flex items-center py-2 rounded-lg text-black hover:text-primary"
+						>
+							<i
+								class="ti ti-components text-xl text-gray-500 pr-4"
+							></i>
+							Components
+						</a>
+						<ul
+							class="accordion-content text-xs py-2 pl-7 relative before:content-[''] before:w-[1px] before:absolute before:bg-gray-200 before:top-0 before:left-3 before:h-[calc(100%-40px)]"
+						>
+							<li
+								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
+							>
+								<a
+									class="px-3 py-2 flex items-center shadow-sm bg-white text-black rounded-lg"
+									href="#"
+									>Card</a
+								>
+							</li>
+						</ul>
+					</li>
+				</ul>
 			</aside>
-        </div>
-        <script type="module" src="/src/js/main.js"></script>
-    </body>
+			<!-- Main Content (Fills Remaining Space) -->
+			<div class="flex flex-1 p-4">
+				<main class="bg-white flex-1 rounded-2xl py-6">
+					<!-- Content goes here -->
+					<div class="container mx-auto">
+						<div class="flex flex-col gap-4">
+							<h1>Heading 1</h1>
+							<h2>Heading 2</h2>
+							<h3>Heading 3</h3>
+							<h4>Heading 4</h4>
+							<h5>Heading 5</h5>
+							<h6>Heading 6</h6>
+							<h6 class="subtitle-1">
+								subtitle1. The quick brown fox jumps over the
+								lazy dog.
+							</h6>
+							<h6 class="subtitle-2">
+								subtitle2. The quick brown fox jumps over the
+								lazy dog.
+							</h6>
+							<p class="body1">
+								body1. Lorem ipsum dolor sit amet, consectetur
+								adipisicing elit. Quos blanditiis tenetur unde
+								suscipit, quam beatae rerum inventore
+								consectetur, neque doloribus, cupiditate numquam
+								dignissimos laborum fugiat deleniti? Eum quasi
+								quidem quibusdam.
+							</p>
+							<p>
+								body2. Lorem ipsum dolor sit amet, consectetur
+								adipisicing elit. Quos blanditiis tenetur unde
+								suscipit, quam beatae rerum inventore
+								consectetur, neque doloribus, cupiditate numquam
+								dignissimos laborum fugiat deleniti? Eum quasi
+								quidem quibusdam.
+							</p>
+							<p class="caption">Caption</p>
+						</div>
+					</div>
+				</main>
+			</div>
+		</div>
+
+		<script type="module" src="/src/js/main.js"></script>
+	</body>
 </html>

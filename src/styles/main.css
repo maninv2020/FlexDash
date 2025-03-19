@@ -1,5 +1,82 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #1958f7
+	/* ==============================
+       Global Typography
+    ============================== */
+	--default-font-family: "Inter", sans-serif; /* Primary font for the application */
+
+	/* ==============================
+       Color Palette
+    ============================== */
+	--color-primary: #1958f7; /* Primary brand color */
+
+	/* ==============================
+       Layout & Sizing
+    ============================== */
+	--aside-width: 280px; /* Default sidebar width */
+}
+
+@layer base {
+	body {
+		color: #1a1e23;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: 600;
+	}
+	h1 {
+		font-size: var(--text-4xl);
+	}
+	h2 {
+		font-size: var(--text-3xl);
+	}
+	h3 {
+		font-size: var(--text-2xl);
+	}
+	h4 {
+		font-size: var(--text-xl);
+	}
+	h5 {
+		font-size: var(--text-lg);
+	}
+	h6 {
+		font-size: var(--text-base);
+	}
+	.subtitle-1 {
+		font-size: var(--text-base);
+		line-height: 1.75rem;
+		font-weight: 400;
+	}
+	.subtitle-2 {
+		font-size: var(--text-sm);
+		line-height: 1.57;
+		letter-spacing: 0.00714em;
+	}
+	.body1 {
+		font-size: var(--text-base);
+		line-height: 1.5;
+	}
+	p {
+		font-size: var(--text-sm);
+		line-height: 1.43;
+	}
+	.caption,
+	.overline {
+		font-size: var(--text-xs);
+		line-height: 1.66;
+	}
+}
+
+@layer components {
+	.card {
+		background-color: var(--color-white);
+		border-radius: var(--rounded-lg);
+		padding: var(--spacing-6);
+		box-shadow: var(--shadow-xl);
+	}
 }
