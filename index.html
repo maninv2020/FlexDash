@@ -1,237 +1,243 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Vite App</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
-		/>
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css"
-		/>
-		<link rel="stylesheet" href="/src/styles/main.css" />
-	</head>
-	<body>
-		<div class="flex h-screen overflow-hidden bg-gray-50">
-			<!-- Sidebar  -->
-			<aside class="w-[theme(aside-width)] px-6">
-				<div class="h-18 flex items-center">
-					<img src="src/assets/logo.png" />
-				</div>
-				<ul class="text-gray-500 font-medium text-sm">
-					<li>
-						<a
-							href="#"
-							class="accordion-btn flex items-center py-2 rounded-lg text-black hover:text-primary"
-						>
-							<i
-								class="ti ti-layout-dashboard text-xl text-gray-500 pr-4"
-							></i>
-							Dashboards
-						</a>
-						<ul
-							class="accordion-content text-xs py-2 pl-7 relative before:content-[''] before:w-[1px] before:absolute before:bg-gray-200 before:top-0 before:left-3 before:h-[calc(100%-40px)] hidden"
-						>
-							<li
-								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
-							>
-								<a
-									class="px-2 py-2 flex items-center shadow-sm bg-white text-black rounded-lg hover:text-primary"
-									href="#"
-								>
-									Sales
-								</a>
-							</li>
-							<li
-								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
-							>
-								<a
-									class="px-2 py-2 flex items-center hover:text-primary"
-									href="#"
-									>CRM</a
-								>
-							</li>
-							<li
-								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
-							>
-								<a
-									class="px-2 py-2 flex items-center hover:text-primary"
-									href="#"
-									>Cryptocurrency</a
-								>
-							</li>
-							<li
-								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
-							>
-								<a
-									class="px-2 py-2 flex items-center hover:text-primary"
-									href="#"
-									>Personal</a
-								>
-							</li>
-							<li
-								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
-							>
-								<a
-									class="px-2 py-2 flex items-center hover:text-primary"
-									href="#"
-									>CRM</a
-								>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a
-							href="#"
-							class="accordion-btn flex items-center py-2 rounded-lg text-black hover:text-primary"
-						>
-							<i
-								class="ti ti-keyframes text-xl text-gray-500 pr-4"
-							></i>
-							Pages
-						</a>
-						<ul
-							class="accordion-content text-xs py-2 pl-7 relative before:content-[''] before:w-[1px] before:absolute before:bg-gray-200 before:top-0 before:left-3 before:h-[calc(100%-40px)] hidden"
-						>
-							<li
-								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
-							>
-								<a class="px-3 py-2 flex items-center" href="#"
-									>Login</a
-								>
-							</li>
-							<li
-								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
-							>
-								<a class="px-3 py-2 flex items-center" href="#"
-									>Register</a
-								>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a
-							href="#"
-							class="accordion-btn block py-2 rounded-lg text-black hover:text-primary"
-						>
-							<i
-								class="ti ti-app-window text-xl text-gray-500 pr-4"
-							></i>
-							Apps
-						</a>
-						<ul
-							class="accordion-content text-xs py-2 pl-7 relative before:content-[''] before:w-[1px] before:absolute before:bg-gray-200 before:top-0 before:left-3 before:h-[calc(100%-40px)] hidden"
-						>
-							<li
-								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
-							>
-								<a class="px-3 py-2 flex items-center" href="#"
-									>Email</a
-								>
-							</li>
-							<li
-								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
-							>
-								<a class="px-3 py-2 flex items-center" href="#"
-									>Chat</a
-								>
-							</li>
-							<li
-								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
-							>
-								<a class="px-3 py-2 flex items-center" href="#"
-									>Kanban</a
-								>
-							</li>
-							<li
-								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
-							>
-								<a class="px-3 py-2 flex items-center" href="#"
-									>Calender</a
-								>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a
-							href="#"
-							class="accordion-btn flex items-center py-2 rounded-lg text-black hover:text-primary"
-						>
-							<i
-								class="ti ti-components text-xl text-gray-500 pr-4"
-							></i>
-							Components
-						</a>
-						<ul
-							class="accordion-content text-xs py-2 pl-7 relative before:content-[''] before:w-[1px] before:absolute before:bg-gray-200 before:top-0 before:left-3 before:h-[calc(100%-40px)]"
-						>
-							<li
-								class="relative before:block before:h-[50%] before:w-4 before:absolute before:border-b before:border-l before:rounded-bl-lg before:border-gray-200 before:top-0 before:right-full"
-							>
-								<a
-									class="px-3 py-2 flex items-center shadow-sm bg-white text-black rounded-lg"
-									href="#"
-									>Card</a
-								>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</aside>
-			<!-- Main Content (Fills Remaining Space) -->
-			<div class="flex flex-1 p-4">
-				<main class="bg-white flex-1 rounded-2xl py-6">
-					<!-- Content goes here -->
-					<div class="container mx-auto">
-						<div class="flex flex-col gap-4">
-							<h1>Heading 1</h1>
-							<h2>Heading 2</h2>
-							<h3>Heading 3</h3>
-							<h4>Heading 4</h4>
-							<h5>Heading 5</h5>
-							<h6>Heading 6</h6>
-							<h6 class="subtitle-1">
-								subtitle1. The quick brown fox jumps over the
-								lazy dog.
-							</h6>
-							<h6 class="subtitle-2">
-								subtitle2. The quick brown fox jumps over the
-								lazy dog.
-							</h6>
-							<p class="body1">
-								body1. Lorem ipsum dolor sit amet, consectetur
-								adipisicing elit. Quos blanditiis tenetur unde
-								suscipit, quam beatae rerum inventore
-								consectetur, neque doloribus, cupiditate numquam
-								dignissimos laborum fugiat deleniti? Eum quasi
-								quidem quibusdam.
-							</p>
-							<p>
-								body2. Lorem ipsum dolor sit amet, consectetur
-								adipisicing elit. Quos blanditiis tenetur unde
-								suscipit, quam beatae rerum inventore
-								consectetur, neque doloribus, cupiditate numquam
-								dignissimos laborum fugiat deleniti? Eum quasi
-								quidem quibusdam.
-							</p>
-							<p class="caption">Caption</p>
-						</div>
-					</div>
-				</main>
-			</div>
-		</div>
+<!doctype html>
+<html lang="en" class="scroll-smooth" data-theme="light">
+    <head>
+        <!-- Character Encoding -->
+        <meta charset="UTF-8" />
 
-		<script type="module" src="/src/js/main.js"></script>
-	</body>
+        <!-- SEO Meta Tags -->
+        <meta name="description" content="Vutroz - A premium multipurpose admin and dashboard template built with Vite, Alpine.js, Tailwind CSS, and motion animations. Designed for high performance and modern web applications." />
+        <meta name="keywords" content="Admin Dashboard, Dashboard Template, Tailwind CSS, Alpine.js, Vite, Motion Animation, UI Kit, Responsive Admin Panel, Web App UI, SaaS Dashboard" />
+        <meta name="author" content="NV_Themes" />
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+        <!-- Responsive Viewport Settings -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Page Title -->
+        <title>Vutroz - A premium multipurpose admin and dashboard template</title>
+
+        <!-- Google Font: Inter -->
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+
+        <!-- Icon Fonts -->
+        <!-- Tabler Icons (Lightweight SVG-based icons for UI) -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+
+        <!-- Phosphor Icons (Duotone Icon Set for Additional UI Elements) -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css" />
+
+        <!-- Main Stylesheet -->
+        <link rel="stylesheet" href="/src/styles/main.css" />
+    </head>
+    <body x-data class="text-zinc-950 dark:text-zinc-100">
+        <div class="flex h-screen overflow-hidden bg-zinc-50 dark:bg-slate-900">
+            <!-- Sidebar  -->
+            <aside class="sidebar">
+                <div class="flex h-18 items-center">
+                    <img src="src/assets/logo.png" />
+                </div>
+                <ul class="side-menu">
+                    <li class="overtext py-2">Main</li>
+                    <li>
+                        <a href="#" class="accordion-btn hover:text-primary flex items-center rounded-lg py-2">
+                            <i class="ti ti-layout-dashboard pr-4 text-xl text-gray-500"></i>
+                            Dashboards
+                        </a>
+                        <ul class="accordion-content relative hidden py-2 pl-7 text-xs before:absolute before:top-0 before:left-3 before:h-[calc(100%-40px)] before:w-[1px] before:bg-gray-200 before:content-['']">
+                            <li class="relative before:absolute before:top-0 before:right-full before:block before:h-[50%] before:w-4 before:rounded-bl-lg before:border-b before:border-l before:border-gray-200">
+                                <a class="hover:text-primary flex items-center rounded-lg bg-white px-2 py-2 shadow-sm" href="#">Sales</a>
+                            </li>
+                            <li class="relative before:absolute before:top-0 before:right-full before:block before:h-[50%] before:w-4 before:rounded-bl-lg before:border-b before:border-l before:border-gray-200">
+                                <a class="hover:text-primary flex items-center px-2 py-2" href="#">CRM</a>
+                            </li>
+                            <li class="relative before:absolute before:top-0 before:right-full before:block before:h-[50%] before:w-4 before:rounded-bl-lg before:border-b before:border-l before:border-gray-200">
+                                <a class="hover:text-primary flex items-center px-2 py-2" href="#">Cryptocurrency</a>
+                            </li>
+                            <li class="relative before:absolute before:top-0 before:right-full before:block before:h-[50%] before:w-4 before:rounded-bl-lg before:border-b before:border-l before:border-gray-200">
+                                <a class="hover:text-primary flex items-center px-2 py-2" href="#">Personal</a>
+                            </li>
+                            <li class="relative before:absolute before:top-0 before:right-full before:block before:h-[50%] before:w-4 before:rounded-bl-lg before:border-b before:border-l before:border-gray-200">
+                                <a class="hover:text-primary flex items-center px-2 py-2" href="#">CRM</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="overtext py-2">Web Apps</li>
+                    <li>
+                        <a href="#" class="accordion-btn hover:text-primary flex items-center rounded-lg py-2">
+                            <i class="ti ti-keyframes pr-4 text-xl text-gray-500"></i>
+                            Pages
+                        </a>
+                        <ul class="accordion-content relative hidden py-2 pl-7 text-xs before:absolute before:top-0 before:left-3 before:h-[calc(100%-40px)] before:w-[1px] before:bg-gray-200 before:content-['']">
+                            <li class="relative before:absolute before:top-0 before:right-full before:block before:h-[50%] before:w-4 before:rounded-bl-lg before:border-b before:border-l before:border-gray-200">
+                                <a class="flex items-center px-3 py-2" href="#">Login</a>
+                            </li>
+                            <li class="relative before:absolute before:top-0 before:right-full before:block before:h-[50%] before:w-4 before:rounded-bl-lg before:border-b before:border-l before:border-gray-200">
+                                <a class="flex items-center px-3 py-2" href="#">Register</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="accordion-btn hover:text-primary block rounded-lg py-2">
+                            <i class="ti ti-app-window pr-4 text-xl text-gray-500"></i>
+                            Apps
+                        </a>
+                        <ul class="accordion-content relative hidden py-2 pl-7 text-xs before:absolute before:top-0 before:left-3 before:h-[calc(100%-40px)] before:w-[1px] before:bg-gray-200 before:content-['']">
+                            <li class="relative before:absolute before:top-0 before:right-full before:block before:h-[50%] before:w-4 before:rounded-bl-lg before:border-b before:border-l before:border-gray-200">
+                                <a class="flex items-center px-3 py-2" href="#">Email</a>
+                            </li>
+                            <li class="relative before:absolute before:top-0 before:right-full before:block before:h-[50%] before:w-4 before:rounded-bl-lg before:border-b before:border-l before:border-gray-200">
+                                <a class="flex items-center px-3 py-2" href="#">Chat</a>
+                            </li>
+                            <li class="relative before:absolute before:top-0 before:right-full before:block before:h-[50%] before:w-4 before:rounded-bl-lg before:border-b before:border-l before:border-gray-200">
+                                <a class="flex items-center px-3 py-2" href="#">Kanban</a>
+                            </li>
+                            <li class="relative before:absolute before:top-0 before:right-full before:block before:h-[50%] before:w-4 before:rounded-bl-lg before:border-b before:border-l before:border-gray-200">
+                                <a class="flex items-center px-3 py-2" href="#">Calender</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="overtext py-2">General</li>
+                    <li>
+                        <a href="#" class="accordion-btn hover:text-primary flex items-center rounded-lg py-2">
+                            <i class="ti ti-components pr-4 text-xl text-gray-500"></i>
+                            Components
+                        </a>
+                        <ul class="accordion-content relative py-2 pl-7 text-xs before:absolute before:top-0 before:left-3 before:h-[calc(100%-40px)] before:w-[1px] before:bg-gray-200 before:content-['']">
+                            <li class="relative before:absolute before:top-0 before:right-full before:block before:h-[50%] before:w-4 before:rounded-bl-lg before:border-b before:border-l before:border-gray-200">
+                                <a class="flex items-center rounded-lg bg-white px-3 py-2 shadow-sm" href="#">Card</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+            <!-- Main Content (Fills Remaining Space) -->
+            <div class="flex flex-1 p-4">
+                <main class="flex-1 overflow-auto rounded-2xl bg-white py-6 dark:bg-slate-800">
+                    <button @click="$store.app.toggleDarkMode()" class="rounded bg-gray-300 p-2 dark:bg-gray-700">Toggle Dark Mode</button>
+                    <!-- Content goes here -->
+                    <div class="container mx-auto">
+                        <div class="flex flex-col gap-4">
+                            <h1>Heading 1</h1>
+                            <h2>Heading 2</h2>
+                            <h3>Heading 3</h3>
+                            <h4>Heading 4</h4>
+                            <h5>Heading 5</h5>
+                            <h6>Heading 6</h6>
+                            <h6 class="subtitle-1">subtitle1. The quick brown fox jumps over the lazy dog.</h6>
+                            <h6 class="subtitle-2">subtitle2. The quick brown fox jumps over the lazy dog.</h6>
+                            <p class="body1">body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.</p>
+                            <p>body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.</p>
+                            <p class="caption">Caption</p>
+                            <p class="overtext">overtext</p>
+                        </div>
+                        <button class="btn btn-primary" disabled>Primary</button>
+                        <div class="mb-4 flex flex-row items-center gap-4">
+                            <button class="btn btn-default btn-sm">Default</button>
+                            <button class="btn btn-default">Default</button>
+                            <button class="btn btn-default btn-lg">Default</button>
+                        </div>
+                        <div class="mb-4 flex flex-row items-center gap-4">
+                            <button class="btn btn-default">Default</button>
+                            <button class="btn btn-primary">Primary</button>
+                            <button class="btn btn-secondary">Secondary</button>
+                            <button class="btn btn-success">Success</button>
+                            <button class="btn btn-warning">Warning</button>
+                            <button class="btn btn-danger">Danger</button>
+                        </div>
+                        <div class="mb-4 flex flex-row items-center gap-4">
+                            <button class="btn btn-default btn-shadow">Default</button>
+                            <button class="btn btn-primary btn-shadow">Primary</button>
+                            <button class="btn btn-secondary btn-shadow">Secondary</button>
+                            <button class="btn btn-success btn-shadow">Success</button>
+                            <button class="btn btn-warning btn-shadow">Warning</button>
+                            <button class="btn btn-danger btn-shadow">Danger</button>
+                        </div>
+                        <div class="mb-4 flex flex-row items-center gap-4">
+                            <button class="btn btn-default btn-bordered btn-sm">Bordered Default</button>
+                            <button class="btn btn-primary btn-bordered btn-sm">Bordered Primary</button>
+                            <button class="btn btn-bordered btn-secondary btn-sm">Bordered Secondary</button>
+                            <button class="btn btn-bordered btn-success btn-sm">Bordered Success</button>
+                            <button class="btn btn-bordered btn-warning btn-sm">Bordered Warning</button>
+                            <button class="btn btn-bordered btn-danger btn-sm">Bordered Danger</button>
+                        </div>
+                        <div class="mb-4 flex flex-row items-center gap-4">
+                            <button class="btn btn-default btn-link">Link Default</button>
+                            <button class="btn btn-primary btn-link">Link Primary</button>
+                            <button class="btn btn-secondary btn-link">Link Secondary</button>
+                            <button class="btn btn-success btn-link">Link Success</button>
+                            <button class="btn btn-warning btn-link">Link Warning</button>
+                            <button class="btn btn-danger btn-link">Link Danger</button>
+                        </div>
+                        <div class="mb-4 flex flex-row items-center gap-4">
+                            <button class="btn btn-default btn-flat">Flat Default</button>
+                            <button class="btn btn-primary btn-flat">Flat Default</button>
+                            <button class="btn btn-secondary btn-flat">Flat Default</button>
+                            <button class="btn btn-success btn-flat">Flat Default</button>
+                            <button class="btn btn-warning btn-flat">Flat Default</button>
+                            <button class="btn btn-danger btn-flat">Flat Default</button>
+                        </div>
+                        <div class="mb-4 flex flex-row items-center gap-4">
+                            <button class="btn btn-secondary loading-btn relative" disabled data-loading="true">
+                                <!-- Loading Spinner -->
+                                <i class="ti ti-loader-2 animate-spin"></i>
+                                <!-- Button Text -->
+                                <span>Loading</span>
+                            </button>
+                            <button class="size-animate btn btn-secondary loading-btn" x-data="{ loading: false }" @click="loading = !loading">
+                                <!-- Loading Spinner -->
+                                <i class="ti ti-loader-2 animate-spin" x-show="loading"></i>
+                                <!-- Button Text -->
+                                <span>Toggle Loader</span>
+                            </button>
+                        </div>
+                        <div class="mb-4 flex flex-row items-center gap-4">
+                            <button class="btn-icon btn-primary"><i class="ti ti-heart"></i></button>
+                            <button class="btn-icon btn-secondary btn-rounded btn-sm btn-shadow"><i class="ti ti-bell"></i></button>
+                            <button class="btn-icon btn-default btn-rounded btn-bordered btn-lg btn-shadow"><i class="ph-duotone ph-user"></i></button>
+                        </div>
+                        <div class="mb-4 flex flex-row items-center gap-4">
+                            <div class="relative">
+                                <button class="btn-icon btn-default btn-borderedbtn-shadow">
+                                    <i class="ti ti-bell"></i>
+                                </button>
+                                <span class="absolute top-0 right-0 -mt-1 -mr-1 flex size-2">
+                                    <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
+                                    <span class="relative inline-flex size-2 rounded-full bg-sky-500"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-3 items-start gap-4">
+                            <div class="card pressable">
+                                <img src="/src/assets/images/component/card/card1.webp" />
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <h6 class="card-subtitle subtitle-1">Demo card subtitle</h6>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <h6 class="card-subtitle subtitle-1">Demo card subtitle</h6>
+                                </div>
+                                <img src="/src/assets/images/component/card/card1.webp" />
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <h6 class="card-subtitle subtitle-1">Demo card subtitle</h6>
+                                    <img class="my-6 rounded-2xl" src="/src/assets/images/component/card/card1.webp" />
+                                    <div class="list-group"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <script type="module" src="/src/js/main.js"></script>
+    </body>
 </html>

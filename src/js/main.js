@@ -1,22 +1,28 @@
+// Dark Mode Persistence on Loadz
+if (localStorage.getItem("darkMode") === "true") {
+    document.documentElement.classList.add("dark");
+}
+// Import main stylesheet
 import "../styles/main.css";
-import jQuery from "jquery";
+// Import Alpine.js (a lightweight JavaScript framework for declarative UI)
+import Alpine from "alpinejs";
+// Import Alpine Store
+import initAlpineStore from "./alpineStore";
+// Import motion animations
+import { initMotionEffects } from "./motionAnimations";
 
-jQuery(function () {
-	let $buttons = jQuery(".accordion-btn"),
-		$contents = jQuery(".accordion-content");
+// Make Alpine globally accessible
+window.Alpine = Alpine;
 
-	$buttons.on("click", function () {
-		let $this = jQuery(this),
-			$content = $this.next(".accordion-content");
-
-		if (!$this.hasClass("active")) {
-			$buttons.removeClass("text-black active");
-			$contents.slideUp();
-			$this.addClass("text-black active");
-			$content.slideDown();
-		} else {
-			$this.removeClass("text-black active");
-			$content.slideUp();
-		}
-	});
+// Wait for Alpine to initialize before setting up the global store
+document.addEventListener("alpine:init", () => {
+    /**
+     * Initialize a global store in Alpine.js
+     */
+    initAlpineStore();
 });
+
+// Initialize motion animations
+initMotionEffects();
+
+Alpine.start();

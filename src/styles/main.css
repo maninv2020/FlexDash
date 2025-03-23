@@ -1,82 +1,285 @@
+/* Import Tailwind CSS framework */
 @import "tailwindcss";
+/* Custom variant for dark mode support */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
-	/* ==============================
+    /* ==============================
        Global Typography
     ============================== */
-	--default-font-family: "Inter", sans-serif; /* Primary font for the application */
+    --default-font-family: "Inter", sans-serif; /* Primary font for the application */
 
-	/* ==============================
+    /* ==============================
        Color Palette
     ============================== */
-	--color-primary: #1958f7; /* Primary brand color */
+    --color-default: #f5f4f4; /* Default color */
+    --color-primary: #006fee; /* Primary color */
+    --color-secondary: #6d28d9; /* Secondary color */
+    --color-success: #047857; /* Success color */
+    --color-warning: #d97706; /* Warning color */
+    --color-danger: #dc2626; /* Danger color */
+    --shadow-md: rgba(145, 158, 171, 0.3) 0px 0px 2px 0px, rgba(145, 158, 171, 0.02) 0px 12px 24px -4px;
 
-	/* ==============================
+    /* ==============================
        Layout & Sizing
     ============================== */
-	--aside-width: 280px; /* Default sidebar width */
+    --hover-opacity: 0.8; /* Default hover effect opacity */
+    --aside-width: 280px; /* Default sidebar width */
 }
 
 @layer base {
-	body {
-		color: #1a1e23;
-	}
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		font-weight: 600;
-	}
-	h1 {
-		font-size: var(--text-4xl);
-	}
-	h2 {
-		font-size: var(--text-3xl);
-	}
-	h3 {
-		font-size: var(--text-2xl);
-	}
-	h4 {
-		font-size: var(--text-xl);
-	}
-	h5 {
-		font-size: var(--text-lg);
-	}
-	h6 {
-		font-size: var(--text-base);
-	}
-	.subtitle-1 {
-		font-size: var(--text-base);
-		line-height: 1.75rem;
-		font-weight: 400;
-	}
-	.subtitle-2 {
-		font-size: var(--text-sm);
-		line-height: 1.57;
-		letter-spacing: 0.00714em;
-	}
-	.body1 {
-		font-size: var(--text-base);
-		line-height: 1.5;
-	}
-	p {
-		font-size: var(--text-sm);
-		line-height: 1.43;
-	}
-	.caption,
-	.overline {
-		font-size: var(--text-xs);
-		line-height: 1.66;
-	}
+    /* ==============================
+       Base Styles for Typography
+    ============================== */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 600;
+    }
+    h1 {
+        font-size: var(--text-4xl);
+    }
+    h2 {
+        font-size: var(--text-3xl);
+    }
+    h3 {
+        font-size: var(--text-2xl);
+    }
+    h4 {
+        font-size: var(--text-xl);
+    }
+    h5 {
+        font-size: var(--text-lg);
+    }
+    h6 {
+        font-size: var(--text-base);
+    }
+
+    .subtitle-1 {
+        font-size: var(--text-base);
+        line-height: 1.75rem;
+        font-weight: 400;
+    }
+    .subtitle-2 {
+        font-size: var(--text-sm);
+        line-height: 1.57;
+        letter-spacing: 0.00714em;
+    }
+    .body1 {
+        font-size: var(--text-base);
+        line-height: 1.5;
+    }
+    p {
+        font-size: var(--text-sm);
+        line-height: 1.43;
+        @apply mb-1;
+    }
+    .caption,
+    .overtext {
+        font-size: var(--text-xs);
+        line-height: 1.66;
+    }
+    .overtext {
+        line-height: 2.66;
+        letter-spacing: 0.08333em;
+        text-transform: uppercase;
+    }
 }
 
 @layer components {
-	.card {
-		background-color: var(--color-white);
-		border-radius: var(--rounded-lg);
-		padding: var(--spacing-6);
-		box-shadow: var(--shadow-xl);
-	}
+    /* ==============================
+       Button Styles
+    ============================== */
+    .btn,
+    .btn-icon {
+        @apply relative flex h-10 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-md px-4 text-sm font-normal whitespace-nowrap subpixel-antialiased transition-all select-none;
+        &:hover {
+            opacity: 0.85;
+        }
+        &:disabled,
+        &[data-loading="true"] {
+            @apply cursor-default opacity-50;
+        }
+    }
+    .btn-icon {
+        @apply w-10 p-0 text-lg;
+    }
+
+    /* Button Sizes */
+    .btn-sm {
+        @apply h-8 px-3 text-xs;
+        &.btn-icon {
+            @apply w-8 text-sm;
+        }
+    }
+    .btn-lg {
+        @apply h-12 px-6 text-base;
+        &.btn-icon {
+            @apply w-12 text-xl;
+        }
+    }
+    .btn-rounded {
+        @apply rounded-full;
+    }
+
+    /* Default Button Styles */
+    .btn-default {
+        background-color: var(--color-default);
+        border-color: var(--color-default);
+        color: var(--color-black);
+    }
+
+    /* Button Colors */
+    .btn-primary {
+        background-color: var(--color-primary);
+        border-color: var(--color-primary);
+        color: var(--color-white);
+    }
+    .btn-secondary {
+        background-color: var(--color-secondary);
+        border-color: var(--color-secondary);
+        color: var(--color-white);
+    }
+    .btn-success {
+        background-color: var(--color-success);
+        border-color: var(--color-success);
+        color: var(--color-white);
+    }
+    .btn-warning {
+        background-color: var(--color-warning);
+        border-color: var(--color-warning);
+        color: var(--color-white);
+    }
+    .btn-danger {
+        background-color: var(--color-danger);
+        border-color: var(--color-danger);
+        color: var(--color-white);
+    }
+
+    /* Bordered (Outline) Variant */
+    .btn-bordered {
+        background: transparent;
+        border-width: 1px;
+    }
+
+    .btn-primary.btn-bordered {
+        color: var(--color-primary);
+    }
+    .btn-secondary.btn-bordered {
+        color: var(--color-secondary);
+    }
+    .btn-success.btn-bordered {
+        color: var(--color-success);
+    }
+    .btn-warning.btn-bordered {
+        color: var(--color-warning);
+    }
+    .btn-danger.btn-bordered {
+        color: var(--color-danger);
+    }
+
+    /* Link Variant */
+    .btn-link {
+        @apply border-none bg-transparent;
+    }
+    .btn-primary.btn-link {
+        @apply text-primary hover:bg-primary/10;
+    }
+    .btn-secondary.btn-link {
+        @apply text-violet-700 hover:bg-violet-700/10;
+    }
+    .btn-success.btn-link {
+        @apply text-green-700 hover:bg-green-700/10;
+    }
+    .btn-warning.btn-link {
+        @apply text-amber-500 hover:bg-amber-500/10;
+    }
+    .btn-danger.btn-link {
+        @apply text-red-600 hover:bg-red-600/10;
+    }
+
+    /* Flat Variant */
+    .btn-flat {
+        @apply border-none;
+    }
+    .btn-primary.btn-flat {
+        @apply bg-primary/20 text-primary;
+    }
+    .btn-secondary.btn-flat {
+        @apply bg-violet-200 text-violet-700;
+    }
+    .btn-success.btn-flat {
+        @apply bg-green-200 text-green-700;
+    }
+    .btn-warning.btn-flat {
+        @apply bg-amber-200 text-amber-700;
+    }
+    .btn-danger.btn-flat {
+        @apply bg-red-200 text-red-700;
+    }
+
+    /* Shadow Variant */
+    .btn-shadow {
+        --btn-shadow: 0 10px 15px -3px var(--btn-shadow-color), 0 4px 6px -4px var(--btn-shadow-color);
+        box-shadow: var(--btn-shadow);
+    }
+
+    .btn-default.btn-shadow {
+        --btn-shadow-color: theme("colors.default / 90%");
+    }
+    .btn-primary.btn-shadow {
+        --btn-shadow-color: theme("colors.primary / 40%");
+    }
+    .btn-secondary.btn-shadow {
+        --btn-shadow-color: theme("colors.violet.700 / 40%");
+    }
+    .btn-success.btn-shadow {
+        --btn-shadow-color: theme("colors.green.700 / 40%");
+    }
+    .btn-warning.btn-shadow {
+        --btn-shadow-color: theme("colors.amber.500 / 40%");
+    }
+    .btn-danger.btn-shadow {
+        --btn-shadow-color: theme("colors.red.600 / 40%");
+    }
+
+    .pressable {
+        @apply overflow-hidden;
+    }
+
+    /* ==============================
+       Sidebar
+    ============================== */
+    .sidebar {
+        @apply w-[var(--aside-width)] bg-zinc-50 px-6;
+        @variant dark {
+            @apply bg-slate-900;
+        }
+        .side-menu {
+            @apply text-sm font-medium;
+        }
+    }
+
+    /* ==============================
+       Card
+    ============================== */
+    .card {
+        @apply relative overflow-hidden rounded-2xl bg-white;
+        box-shadow: var(--shadow-md);
+        .card-body {
+            @apply p-6;
+        }
+        .card-subtitle {
+            @apply text-zinc-500;
+        }
+        @variant dark {
+            @apply bg-slate-800;
+        }
+    }
+
+    .list-group {
+    }
 }
