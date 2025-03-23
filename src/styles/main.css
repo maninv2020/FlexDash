@@ -25,6 +25,7 @@
     ============================== */
     --hover-opacity: 0.8; /* Default hover effect opacity */
     --aside-width: 280px; /* Default sidebar width */
+    --default-transition-duration: 250ms;
 }
 
 @layer base {
@@ -183,7 +184,7 @@
 
     /* Link Variant */
     .btn-link {
-        @apply border-none bg-transparent;
+        @apply hover:bg-default border-none bg-transparent;
     }
     .btn-primary.btn-link {
         @apply text-primary hover:bg-primary/10;
@@ -248,6 +249,31 @@
 
     .pressable {
         @apply overflow-hidden;
+    }
+
+    .avatar {
+        @apply flex size-10 items-stretch justify-center rounded-full border-zinc-300 bg-white text-xs opacity-70 not-[.disabled]:opacity-100 not-[.disabled]:hover:z-10 not-[.disabled]:hover:scale-[1.1] not-[:disbled]:hover:transition-transform;
+        & > img {
+            @apply rounded-full object-cover;
+        }
+        & > div,
+        i {
+            @apply bg-default flex flex-1 items-center justify-center rounded-full text-center text-sm;
+        }
+    }
+
+    .ping-animation {
+        @apply absolute top-0 right-0 -mt-1 -mr-1 flex size-2;
+        &::before,
+        &::after {
+            @apply absolute inline-flex rounded-full content-[''];
+        }
+        &::before {
+            @apply h-full w-full animate-ping bg-sky-400 opacity-75;
+        }
+        &::after {
+            @apply size-2 rounded-full bg-sky-500;
+        }
     }
 
     /* ==============================
