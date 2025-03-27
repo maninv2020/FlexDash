@@ -1,4 +1,5 @@
 import { animate, motionValue, press } from "motion";
+import "number-flow";
 
 /**
  * Applies a press animation to button elements.
@@ -49,9 +50,28 @@ function applyButtonPressEffect() {
     });
 }
 
+function numberCounter() {
+    customElements.whenDefined("number-flow").then(() => {
+        document.querySelectorAll("number-flow").forEach((flow) => {
+            const { number, style = "decimal", currency = "USD", notation = "standard" } = flow.dataset;
+
+            if (number) {
+                flow.spinTiming = { duration: 700 };
+                flow.format = { style, currency, notation };
+
+                setTimeout(() => {
+                    flow.update(0);
+                    flow.update(parseFloat(number));
+                }, 300);
+            }
+        });
+    });
+}
+
 /**
  * Initializes motion-based effects for interactive elements.
  */
 export function initMotionEffects() {
     applyButtonPressEffect();
+    numberCounter();
 }

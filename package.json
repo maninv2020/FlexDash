@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "alpinejs": "^3.14.9",
-    "motion": "^12.5.0"
+    "motion": "^12.5.0",
+    "number-flow": "^0.5.6"
   }
 }

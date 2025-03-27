@@ -10,6 +10,8 @@ import Alpine from "alpinejs";
 import initAlpineStore from "./alpineStore";
 // Import motion animations
 import { initMotionEffects } from "./motionAnimations";
+// Import NumberFlow
+import "number-flow";
 
 // Make Alpine globally accessible
 window.Alpine = Alpine;

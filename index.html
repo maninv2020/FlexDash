@@ -117,8 +117,43 @@
             <div class="flex flex-1 p-4">
                 <main class="flex-1 overflow-auto rounded-2xl bg-white py-6 dark:bg-slate-800">
                     <button @click="$store.app.toggleDarkMode()" class="rounded bg-gray-300 p-2 dark:bg-gray-700">Toggle Dark Mode</button>
+
                     <!-- Content goes here -->
                     <div class="container mx-auto">
+                        <div class="grid grid-cols-4 items-start gap-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h2 class="card-title">
+                                        <number-flow data-currency="USD" data-style="currency" data-number="1450.25"></number-flow>
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h2 class="card-title">
+                                        <number-flow data-currency="USD" data-style="currency" data-number="1450.25" data-notation="compact"></number-flow>
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        $
+                                        <span>1450.25</span>
+                                        k
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        $
+                                        <span>1450.25</span>
+                                        k
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
                         <div class="flex flex-col gap-4">
                             <h1>Heading 1</h1>
                             <h2>Heading 2</h2>
@@ -277,6 +312,7 @@
                             <label for="default-range" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">Default range</label>
                             <input id="default-range" type="range" value="50" class="h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 dark:bg-gray-700" />
                         </div>
+
                         <div class="grid grid-cols-3 items-start gap-4">
                             <div class="card pressable">
                                 <img src="/src/assets/images/component/card/card1.webp" />
