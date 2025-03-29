@@ -1,6 +1,6 @@
 import $ from "jquery";
 import "number-flow";
-import { animate, press } from "motion";
+import { animate, press, easeInOut } from "motion";
 
 // Animation configurations
 const ANIMATION_CONFIG = {
@@ -15,7 +15,23 @@ const ANIMATION_CONFIG = {
     number: {
         duration: 700,
     },
+    progress: {
+        duration: 300,
+    },
 };
+
+// Initialize all features
+$(function () {
+    buttonPressEffect();
+    numberCounter();
+    initTabs();
+    initProgressBars();
+});
+
+$(window).on("load", function () {
+    initTabs();
+    initProgressBars();
+});
 
 // Utility functions
 const createRipple = (element, event) => {
@@ -74,12 +90,13 @@ function numberCounter() {
         const style = $element.data("style") || "decimal";
         const currency = $element.data("currency") || "USD";
         const notation = $element.data("notation") || "standard";
+        const duration = $element.data("duration") || 700;
 
         if (!number) return;
 
         if (typeof customElements !== "undefined" && customElements.get("number-flow")) {
             const flowElement = document.createElement("number-flow");
-            flowElement.spinTiming = { duration: ANIMATION_CONFIG.number.duration };
+            flowElement.spinTiming = { duration };
             flowElement.format = { style, currency, notation };
             flowElement.locales = "en-US";
             $element.replaceWith(flowElement);
@@ -97,7 +114,7 @@ function numberCounter() {
             $element.prop("counter", 0).animate(
                 { counter: number },
                 {
-                    duration: ANIMATION_CONFIG.number.duration,
+                    duration,
                     step: function (now) {
                         $(this).text(formatter.format(Math.ceil(now)));
                     },
@@ -107,8 +124,88 @@ function numberCounter() {
     });
 }
 
-// Initialize all features
-$(function () {
-    buttonPressEffect();
-    numberCounter();
-});
+function initTabs() {
+    $(".tabs").each(function () {
+        const $tabs = $(this);
+        const $controls = $tabs.find(".tabs-control");
+        const $sections = $tabs.find(".tabs-section");
+        const $animatedControl = $tabs.find(".animated-tabs-control");
+
+        // Set initial active tab
+        const initialTab = $controls.first().data("tab");
+        $controls.first().attr("data-active", "true");
+        $sections.filter(`[data-section="${initialTab}"]`).attr("data-active", "true");
+
+        // Position animated control initially
+        const initialControl = $controls.first();
+        const initialRect = initialControl[0].getBoundingClientRect();
+        const tabsBarRect = $tabs.find(".tabs-bar")[0].getBoundingClientRect();
+
+        $animatedControl.css({
+            width: initialRect.width,
+            left: initialRect.left - tabsBarRect.left,
+        });
+
+        // Handle tab switching
+        $controls.on("click", function () {
+            const tabId = $(this).data("tab");
+            const $this = $(this);
+
+            // Update controls
+            $controls.attr("data-active", "false");
+            $this.attr("data-active", "true");
+
+            // Update sections
+            $sections.attr("data-active", "false");
+            $sections.filter(`[data-section="${tabId}"]`).attr("data-active", "true");
+
+            // Animate the control
+            const rect = this.getBoundingClientRect();
+            const tabsBarRect = $tabs.find(".tabs-bar")[0].getBoundingClientRect();
+
+            animate(
+                $animatedControl[0],
+                {
+                    width: rect.width,
+                    left: rect.left - tabsBarRect.left,
+                },
+                {
+                    duration: 0.03,
+                    easing: easeInOut,
+                },
+            );
+        });
+    });
+}
+
+// Progress bar animation
+function initProgressBars() {
+    $(".progress-bar").each(function () {
+        const $progressBar = $(this);
+        const $fill = $progressBar.find(".progress-bar-fill");
+        const targetProgress = parseFloat($fill.data("progress")) || 0;
+        const duration = parseFloat($fill.data("duration")) || ANIMATION_CONFIG.progress.duration;
+        const isVertical = $progressBar.hasClass("progress-bar-vertical");
+
+        // Animate progress width/height based on orientation
+        animate($fill[0], { [isVertical ? "height" : "width"]: `${targetProgress}%` }, { duration: duration / 1000 });
+
+        // Animate stripes if progress-stripes-animated class is present
+        if ($fill.hasClass("progress-stripes-animated")) {
+            const stripeAnimation = animate(
+                $fill[0],
+                {
+                    backgroundPosition: ["0px 0px", "-16px 0px"],
+                },
+                {
+                    duration: 0.5,
+                    repeat: Infinity,
+                    easing: "linear",
+                },
+            );
+
+            // Store animation reference for cleanup if needed
+            $fill.data("stripeAnimation", stripeAnimation);
+        }
+    });
+}
